@@ -32,9 +32,8 @@ $(document).ready(function($){
   // Add class .active to current link
   $.navigation.find('a').each(function(){
 
-    var cUrl = String(window.location).split('?')[0];
-
-    if (cUrl.substr(cUrl.length - 1) == '#') {
+    var cUrl = [location.protocol, '//', location.host, location.pathname].join('');
+    if (cUrl.substr(cUrl.length - 1) == '/') {
       cUrl = cUrl.slice(0,-1);
     }
 
